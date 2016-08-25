@@ -1,4 +1,4 @@
-# Authentication
+# Authentication [参考链接](https://auth0.com/blog/build-an-app-with-vuejs/)
 What We'll Build: A Vue.js Authentication App
 ## install dependency
 ```sh
