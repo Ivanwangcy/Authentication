@@ -1,7 +1,7 @@
 // src/index.js
 
 import Vue from 'vue'
-// import App from './components/App.vue'
+import App from './components/App.vue'
 // import Home from './components/Home.vue'
 // // import SecretQuote from './components/SecretQuote.vue'
 // // import Signup from './components/Signup.vue'
@@ -39,7 +39,7 @@ import Vue from 'vue'
 
 new Vue({
   el: "#app",
-  data: {
-    message: "Hello vue.js"
+  render(createElement) {
+    return createElement(App);
   }
 })

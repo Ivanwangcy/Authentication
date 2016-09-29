@@ -1,6 +1,6 @@
 <!-- src/components/App.vue -->
 
-  <template>
+  <!-- <template>
     <nav class="navbar navbar-default">
       <div class="container">
         <ul class="nav navbar-nav">
@@ -14,5 +14,11 @@
     </nav>
     <div class="container">
       <router-view></router-view>
+    </div>
+  </template> -->
+
+  <template lang="html">
+    <div>
+       asdf asdf asdf a
     </div>
   </template>
