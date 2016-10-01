@@ -7,9 +7,9 @@
           <ul class="nav navbar-nav">
             <li><router-link to="/home">Home</router-link></li>
             <li><router-link to="/login">Login</router-link></li>
-            <!-- <li><router-link to="/signup">Sign Up</router-link></li> -->
-            <!-- <li><router-link to="/secretquote">Secret Quote</router-link></li> -->
-            <li><router-link to="/login">Logout</router-link></li>
+            <li><router-link to="/signup" v-if="user.authenticated">Sign Up</router-link></li>
+            <li><router-link to="/secretquote" v-if="user.authenticated">Secret Quote</router-link></li>
+            <li><a v-if="user.authenticated" @click="logout()">Logout</a></li>
           </ul>
         </div>
       </nav>
@@ -33,11 +33,6 @@
     }
   }
   </script>
-  <!-- <template lang="html">
-    <div>
-       asdf asdf asdf a
-    </div>
-  </template> -->
 <style media="screen">
   .nav>li{
     display: inline-block;

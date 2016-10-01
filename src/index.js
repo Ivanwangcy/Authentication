@@ -3,8 +3,8 @@
 import Vue from 'vue'
 import App from './components/App.vue'
 import Home from './components/Home.vue'
-// import SecretQuote from './components/SecretQuote.vue'
-// import Signup from './components/Signup.vue'
+import SecretQuote from './components/SecretQuote.vue'
+import Signup from './components/Signup.vue'
 import Login from './components/Login.vue'
 import VueRouter from 'vue-router'
 import VueResource from 'vue-resource'
@@ -26,6 +26,8 @@ export var router = new VueRouter({
   routes: [
     { path: '/home', component: Home },
     { path: '/login', component: Login },
+    { path: '/signup', component: Signup },
+    { path: '/secretquote', component: SecretQuote },
     // Redirect to the home route if any routes are unmatched
     { path: '*', redirect: '/home' }
   ]

@@ -16,9 +16,6 @@ export default {
   },
   methods: {
     getQuote() {
-      console.log(this.$http.get);
-      console.log(this.$http.then);
-
       this.$http
         .get('http://localhost:3001/api/random-quote')
         .then((result) => {
