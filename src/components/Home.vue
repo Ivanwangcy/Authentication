@@ -16,11 +16,16 @@ export default {
   },
   methods: {
     getQuote() {
+      console.log(this.$http.get);
+      console.log(this.$http.then);
+
       this.$http
-        .get('http://localhost:3001/api/random-quote', (data) => {
-              this.quote = data;
-            })
-        .error((err) => console.log(err))
+        .get('http://localhost:3001/api/random-quote')
+        .then((result) => {
+          this.quote = result.data;
+        },(err) => {
+          console.log(err)
+        })
     }
   }
 

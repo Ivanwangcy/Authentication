@@ -19,35 +19,21 @@ Vue.http.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('id_
 
 // Check the user's auth status when the app starts
 auth.checkAuth()
-export var router = new VueRouter()
-
-// Set up routing and match routes to components
-router.map({
-  '/home': {
-    component: Home
-  },
-  'secretquote': {
-    component: SecretQuote
-  },
-  '/login': {
-    component: Login
-  },
-  '/signup': {
-    component: Signup
-  }
+export var router = new VueRouter({
+  model: 'history',
+  scrollBehavior: () => ({ y: 0 }),
+  // Set up routing and match routes to components
+  routes: [
+    { path: '/home', component: Home },
+    { path: '/login', component: Login },
+    // Redirect to the home route if any routes are unmatched
+    { path: '*', redirect: '/home' }
+  ]
 })
-
-// Redirect to the home route if any routes are unmatched
-router.redirect({
-  '*': '/home'
-})
-
 // Start the app on the #app div
-router.start(App, '#app')
-
-// new Vue({
-//   el: "#app",
-//   render(createElement) {
-//     return createElement(App);
-//   }
-// })
+new Vue({
+  router,
+  render(createElement) {
+    return createElement(App);
+  }
+}).$mount('#app');
