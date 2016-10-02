@@ -39,3 +39,8 @@ new Vue({
     return createElement(App);
   }
 }).$mount('#app');
+
+
+// Instantiate a Lock
+// export var lock = new Auth0Lock('/sessions/create', 'localhost')
+// console.log(lock);
